@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 import ReactFocusLock from 'react-focus-lock'
 import { useModal } from './ModalContext'
 import { ModalOverlay } from './ModalOverlay'
-import { Portal } from '../../../utils/Portal'
+import { Portal } from '../../utils/Portal'
 import { RemoveScroll } from 'react-remove-scroll'
 
 export const ModalPortal = ({ children }: { children: ReactNode }) => {
