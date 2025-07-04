@@ -19,8 +19,9 @@ export const ProgressBar = ({
 	...rest
 }) => {
 	const clampedValue = Math.min(Math.max(value, min), max);
-	const [percentage, setPercentage] =
-		useState < number > ((clampedValue - min) / (max - min)) * 100;
+	const [percentage, setPercentage] = useState(
+		((clampedValue - min) / (max - min)) * 100
+	);
 
 	const durationValue = (duration * 1000) / value;
 	const progressBarRef = useRef(null);
