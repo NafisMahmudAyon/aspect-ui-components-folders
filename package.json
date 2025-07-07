@@ -1,0 +1,27 @@
+{
+  "name": "aspect-ui-cli-folders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "npx prettier --write .",
+    "format": "prettier --write 'components/**/*.{js,jsx,ts,tsx,css,html}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NafisMahmudAyon/aspect-ui-components-folders.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/NafisMahmudAyon/aspect-ui-components-folders/issues"
+  },
+  "homepage": "https://github.com/NafisMahmudAyon/aspect-ui-components-folders#readme",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.10"
+  }
+}
