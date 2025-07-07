@@ -7,7 +7,7 @@ import { useSidebar } from './SidebarContext'
 interface SidebarProps {
   children: ReactNode
   className?: string
-  breakPoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  breakPoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'none'
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -18,7 +18,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const { isOpen } = useSidebar()
 
-  const breakpointStyle = (breakPoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl') => {
+  const breakpointStyle = (breakPoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'none') => {
     switch (breakPoint) {
       case 'sm':
         return 'md:flex md:translate-x-0 md:relative'
@@ -30,6 +30,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return '2xl:flex 2xl:translate-x-0 2xl:relative'
       case '2xl':
         return ''
+      case 'none':
+        return 'flex !translate-x-0 relative'
       default:
         return 'lg:flex lg:translate-x-0 lg:relative'
     }
@@ -38,7 +40,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <aside
       className={cn(
-        'bg-bg fixed left-0 top-0 z-40 h-screen w-64 flex-col p-5 transition-all duration-300 ease-in-out',
+        'bg-bg fixed top-0 left-0 z-40 h-screen w-64 flex-col p-5 transition-all duration-300 ease-in-out',
         breakpointStyle(breakPoint),
         isOpen ? 'translate-x-0' : '-translate-x-full',
         className
