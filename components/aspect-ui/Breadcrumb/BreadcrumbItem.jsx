@@ -1,5 +1,4 @@
 'use client'
-import { HTMLAttributes } from 'react'
 import { cn } from '../../utils/cn'
 
 export const BreadcrumbItem = ({ children, className = '', ...rest }) => {

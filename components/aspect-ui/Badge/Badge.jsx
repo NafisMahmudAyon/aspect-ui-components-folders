@@ -12,7 +12,8 @@ export const Badge = ({ children, variant="default", className="" }) => {
         return 'hover:bg-bg-light hover:text-text border-transparent'
     }
   }
-  const baseStyle = 'inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 focus-visible:border-border transition-[color,box-shadow] overflow-hidden'
+  const baseStyle =
+    'inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 focus-visible:border-border transition-[color,box-shadow] overflow-hidden'
   return (
     <span className={cn( baseStyle, variationStyle(), className)}>{children}</span>
   )
