@@ -1,7 +1,7 @@
 
 'use client'
 
-import React, { forwardRef } from 'react'
+import React, { ChangeEvent, forwardRef } from 'react'
 import { cn } from '../../utils/cn'
 
 interface TextareaProps
@@ -13,6 +13,7 @@ interface TextareaProps
   labelClassName?: string
   wrapperClassName?: string
   errorClassName?: string
+  onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
@@ -25,6 +26,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       labelClassName = '',
       wrapperClassName = '',
       errorClassName = '',
+      onChange,
       ...rest
     },
     ref
@@ -47,6 +49,9 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           id={id}
           name={id}
           className={`placeholder:text-text-muted shadow-xs placeholder:font-normal selection:bg-primary selection:text-primary-foreground focus-visible:border-border focus:outline-hidden focus:ring-border w-full rounded-md border px-3 py-2 focus:ring-2 ${error ? 'border-error-500' : 'border-border'} ${className})`}
+          onChange={event => {
+            onChange?.(event)
+          }}
           {...rest}
         />
         {error && (
