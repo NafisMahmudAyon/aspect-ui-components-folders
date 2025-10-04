@@ -12,6 +12,7 @@ import { cn } from '../../utils/cn'
 import { Tooltip, TooltipAction, TooltipContent } from '../Tooltip'
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  id?: string
   label?: string
   type?: string
   error?: string
@@ -29,6 +30,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
+      id,
       label,
       type = 'text',
       error,
@@ -60,6 +62,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               disabled && 'pointer-events-none opacity-50',
               labelClassName
             )}
+            htmlFor={id}
           >
             {label}
           </label>
@@ -88,6 +91,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               disabled ? 'pointer-events-none opacity-50' : '',
               className
             )}
+            id={id}
+            name={id}
             onChange={event => {
               onChange?.(event)
             }}

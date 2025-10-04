@@ -1,4 +1,3 @@
-// ./app/src/components/Sidebar/SidebarToggleButton.tsx
 'use client'
 
 import { Menu } from 'lucide-react'

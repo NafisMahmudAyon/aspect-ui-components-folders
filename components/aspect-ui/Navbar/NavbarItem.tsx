@@ -1,4 +1,3 @@
-// ./app/src/components/Navbar/NavbarItem.tsx
 'use client'
 
 import React, { ReactNode } from 'react'

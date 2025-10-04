@@ -1,4 +1,3 @@
-// ./app/src/components/Sidebar/SidebarContext.tsx
 'use client'
 
 import React, { createContext, useContext, useState } from 'react'

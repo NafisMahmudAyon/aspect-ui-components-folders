@@ -1,4 +1,3 @@
-// ./app/src/components/Textarea/Textarea.tsx
 
 'use client'
 
@@ -7,6 +6,7 @@ import { cn } from '../../utils/cn'
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  id?: string
   label?: string
   error?: string
   className?: string
@@ -18,6 +18,7 @@ interface TextareaProps
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
     {
+      id,
       label,
       error,
       className = '',
@@ -36,13 +37,16 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
               'text-text mb-1 block text-sm font-medium',
               labelClassName
             )}
+            htmlFor={id}
           >
             {label}
           </label>
         )}
         <textarea
           ref={ref}
-          className={`placeholder:text-text-muted shadow-xs selection:bg-primary selection:text-primary-foreground focus-visible:border-border focus:outline-hidden focus:ring-border w-full rounded-md border px-3 py-2 focus:ring-2 ${error ? 'border-error-500' : 'border-border'} ${className})`}
+          id={id}
+          name={id}
+          className={`placeholder:text-text-muted shadow-xs placeholder:font-normal selection:bg-primary selection:text-primary-foreground focus-visible:border-border focus:outline-hidden focus:ring-border w-full rounded-md border px-3 py-2 focus:ring-2 ${error ? 'border-error-500' : 'border-border'} ${className})`}
           {...rest}
         />
         {error && (

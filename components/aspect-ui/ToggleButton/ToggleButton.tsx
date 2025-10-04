@@ -1,4 +1,3 @@
-// ./app/src/components/Toggle/ToggleButton.tsx
 
 'use client'
 

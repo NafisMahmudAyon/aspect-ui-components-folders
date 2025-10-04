@@ -1,4 +1,3 @@
-// ./app/src/components/Navbar/NavbarCollapse.tsx
 'use client'
 
 import { AnimatePresence, motion, MotionProps } from 'framer-motion'
