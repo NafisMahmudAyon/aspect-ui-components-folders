@@ -8,6 +8,7 @@ import { Tooltip, TooltipAction, TooltipContent } from '../Tooltip'
 export const Input = forwardRef(
   (
     {
+      id,
       label,
       type = 'text',
       error,
@@ -39,6 +40,7 @@ export const Input = forwardRef(
               disabled && 'pointer-events-none opacity-50',
               labelClassName
             )}
+            htmlFor={id}
           >
             {label}
           </label>
@@ -60,13 +62,16 @@ export const Input = forwardRef(
             ref={ref}
             type={inputType}
             className={cn(
-              'placeholder:text-text-muted shadow-xs selection:bg-primary selection:text-primary-foreground focus-visible:border-border focus:outline-hidden focus:ring-border w-full rounded-md border px-3 py-2 ps-11 focus:ring-2',
+              'placeholder:text-text-muted shadow-xs selection:bg-primary selection:text-primary-foreground focus-visible:border-border focus:outline-hidden focus:ring-border w-full rounded-md border px-3 py-2 focus:ring-2',
+              icon ? 'ps-11' : '',
               type === 'password' && 'pe-11',
               error ? 'border-error-foreground' : 'border-border',
               'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
               disabled ? 'pointer-events-none opacity-50' : '',
               className
             )}
+            id={id}
+            name={id}
             onChange={event => {
               onChange?.(event)
             }}

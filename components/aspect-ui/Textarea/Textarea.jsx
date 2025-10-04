@@ -6,12 +6,14 @@ import { cn } from '../../utils/cn'
 export const Textarea = forwardRef(
   (
     {
+      id,
       label,
       error,
       className = '',
       labelClassName = '',
       wrapperClassName = '',
       errorClassName = '',
+      onChange,
       ...rest
     },
     ref
@@ -24,15 +26,21 @@ export const Textarea = forwardRef(
               'text-text mb-1 block text-sm font-medium',
               labelClassName
             )}
+            htmlFor={id}
           >
             {label}
           </label>
         )}
         <textarea
           ref={ref}
+          id={id}
+          name={id}
           className={`placeholder:text-text-muted shadow-xs selection:bg-primary selection:text-primary-foreground focus-visible:border-border focus:outline-hidden focus:ring-border w-full rounded-md border px-3 py-2 focus:ring-2 ${
             error ? 'border-error-500' : 'border-border'
           } ${className})`}
+          onChange={event => {
+            onChange?.(event)
+          }}
           {...rest}
         />
         {error && (
