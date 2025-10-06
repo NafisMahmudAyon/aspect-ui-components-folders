@@ -29,7 +29,7 @@ export const DropdownItem = ({
           isSelected ? cn('bg-bg-light', activeClassName) : ''
         )}
         role='option'
-        area-selected={isSelected}
+        area-selected={isSelected.toString()}
         onClick={handleClick}
         data-selected={isSelected}
         {...rest}
@@ -45,7 +45,7 @@ export const DropdownItem = ({
         className,
         isSelected ? cn('bg-bg-light', activeClassName) : ''
       )}
-      are-selected={isSelected}
+      are-selected={isSelected.toString()}
       role='option'
       onClick={handleClick}
       data-selected={isSelected}
